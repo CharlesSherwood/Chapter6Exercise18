@@ -15,7 +15,7 @@ void Welcome();
 int GetHoursPrice();
 bool repeat();
 
-
+ 
 
 int main(int Info[2])
 {
