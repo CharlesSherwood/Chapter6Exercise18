@@ -13,10 +13,10 @@ how much paint a person needs for a wall
 using namespace std;
 
 void Welcome();
-int GetRooms();
+double GetRooms();
 double GetPrice();
 double GetWall();
-void Calculate(int Rooms,int Price,int Wall);
+void Calculate(double Rooms,double Price,double Wall);
 bool repeat();
 void Display();
  
@@ -38,9 +38,9 @@ int main()
 
 }
 
-int GetRooms()
+double GetRooms()
 {
-	int Rooms;
+	double Rooms;
 	cout << "How Many Rooms Does This Project Have?:";
 	cin >> Rooms;
 	while (Rooms < 1)
@@ -53,7 +53,7 @@ int GetRooms()
 
 double GetPrice()
 {
-	int Price;
+	double Price;
 	cout << "How Much Did The Paint Cost?:";
 	cin >> Price;
 	while (Price < 10)
@@ -63,9 +63,10 @@ double GetPrice()
 	}
 	return Price;
 }
+
 double GetWall()
 {
-	int Wall;
+	double Wall;
 	cout << "What Is The Area Of The Wall?:";
 	cin >> Wall;
 	while (Wall < 0)
@@ -78,9 +79,10 @@ double GetWall()
 }
 
 
-void Calculate(int Rooms,int Price,int Wall)
+void Calculate(double Rooms,double Price,double Wall)
 {
 	int PHour=25, Sfeet=110, Gpaint=1,Labor=8;
+		
 	cout << Rooms << endl;
 	cout << Price << endl;
 	cout << Wall << endl;
@@ -103,7 +105,7 @@ bool repeat()
 {	char repeat;
 	cout << "Would You Like To Repeat The Program Y/N:";
 	cin >> repeat;
-	return (repeat == 'Y', repeat == 'y');
+	return (repeat == 'Y' || repeat == 'y');
 }
 
 void Display()
