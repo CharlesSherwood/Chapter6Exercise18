@@ -24,6 +24,7 @@ double GetPrice();
 double GetWall(int rooms);
 void Calculate(int rooms, double price, double totalWall);
 bool repeat();
+void Display(int gallons, double laborHours, double paintCost, double laborCost, double totalCost, double totalWall);
 
 
 int main()
@@ -106,10 +107,9 @@ double GetWall(int rooms)
     return total;
 }
 
-//Calculates Everything And Displays It Onto The Screen
+//Calculates Everything
 void Calculate(int rooms, double price, double totalWall)
 {
-  
     int gallons = ceil(totalWall / COVERAGE_PER_GALLON);
     double laborHours = gallons * LABOR_HOURS_PER_GALLON;
     double paintCost = gallons * price;
@@ -117,6 +117,12 @@ void Calculate(int rooms, double price, double totalWall)
     double totalCost = paintCost + laborCost;
 
     
+    Display(gallons, laborHours, paintCost, laborCost, totalCost, totalWall);
+}
+
+//Display module that would display the end results when called upon
+void Display(int gallons, double laborHours, double paintCost, double laborCost, double totalCost, double totalWall)
+{
     cout << fixed << setprecision(2);
     cout << "\n----- Paint Job Estimate -----\n";
     cout << "Total square feet: " << totalWall << " sq ft\n";
@@ -127,6 +133,7 @@ void Calculate(int rooms, double price, double totalWall)
     cout << "Total cost of the paint job: $" << totalCost << endl;
     cout << "-------------------------------\n";
 }
+
 
 
 //Ask The User If They Want To Repeat
